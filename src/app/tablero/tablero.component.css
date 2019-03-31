@@ -1,0 +1,46 @@
+body
+{
+	background-color: rgb(188, 147, 90);
+}
+
+div
+{
+	display: block;
+	float: left;
+	font-size:65px;
+	text-align:center;
+}
+
+div.ajedrez
+{
+	width: 700px;
+	height: 550px;
+    margin-left:250px;
+
+}
+
+div.ajedrez div div
+{
+	width:87.5px;
+	height:75px;
+}
+
+/*div.ajedrez div:nth-child(odd) div:nth-child(odd)
+{
+	background-color: rgb(188, 147, 90);
+}
+
+div.ajedrez div:nth-child(odd) div:nth-child(even)
+{
+	background-color: rgb(102, 56, 40);
+}
+
+div.ajedrez div:nth-child(even) div:nth-child(odd)
+{
+	background-color: rgb(102, 56, 40);
+}
+
+div.ajedrez div:nth-child(even) div:nth-child(even)
+{
+	background-color: rgb(188, 147, 90);
+}*/
