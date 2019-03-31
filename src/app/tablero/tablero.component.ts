@@ -2,8 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { PeonBlancoService } from '../services/peon-blanco.service';
 import { PeonNegroService } from '../services/peon-negro.service';
 import { TorreService } from '../services/torre.service';
-import {CaballoService} from '../services/caballo.service';
-import {AlfilService} from '../services/alfil.service';
+import { CaballoService } from '../services/caballo.service';
+import { AlfilService } from '../services/alfil.service';
+import { DamaService } from '../services/dama.service';
+import { ReyService } from '../services/rey.service';
 
 @Component({
   selector: 'app-tablero',
@@ -12,7 +14,7 @@ import {AlfilService} from '../services/alfil.service';
 })
 export class TableroComponent implements OnInit {
 
-  constructor(private peonBlanco:PeonBlancoService , private peonNegro:PeonNegroService, private torre:TorreService, private caballo:CaballoService, private alfil:AlfilService) { }
+  constructor(private peonBlanco:PeonBlancoService , private peonNegro:PeonNegroService, private torre:TorreService, private caballo:CaballoService, private alfil:AlfilService, private dama:DamaService, private rey:ReyService) { }
 
   posInicial :string = '';
   posFinal :string = '';
@@ -24,7 +26,7 @@ export class TableroComponent implements OnInit {
       if(document.getElementById(this.posInicial).innerText != ''){
         this.ficha = document.getElementById(this.posInicial).innerText;
         //console.log(this.ficha);
-      } else {
+      } else if(document.getElementById(this.posInicial).innerText == ''){
         console.log('no selecciono ficha');
       }
     } else {
@@ -39,9 +41,15 @@ export class TableroComponent implements OnInit {
         this.caballo.moverCaballo(this.posInicial, this.posFinal, this.ficha);
       }else if(this.ficha == '♗' || this.ficha == '♝'){
         this.alfil.moverAlfil(this.posInicial, this.posFinal, this.ficha);
+      }else if(this.ficha == '♕' || this.ficha == '♛'){
+        this.dama.moverDama(this.posInicial, this.posFinal, this.ficha);
+      }else if(this.ficha == '♔' || this.ficha == '♚'){
+        this.rey.moverRey(this.posInicial, this.posFinal, this.ficha);
       }
 
       this.posInicial = '';
+      this.posFinal = '';
+      this.ficha = '';
     }
   
   }

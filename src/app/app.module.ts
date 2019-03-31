@@ -9,6 +9,8 @@ import { PeonNegroService } from './services/peon-negro.service';
 import { TorreService } from './services/torre.service';
 import { CaballoService } from './services/caballo.service';
 import { AlfilService } from './services/alfil.service';
+import { DamaService } from './services/dama.service';
+import { ReyService } from './services/rey.service';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,7 @@ import { AlfilService } from './services/alfil.service';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [PeonBlancoService, PeonNegroService, TorreService, CaballoService, AlfilService],
+  providers: [PeonBlancoService, PeonNegroService, TorreService, CaballoService, AlfilService, DamaService, ReyService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
