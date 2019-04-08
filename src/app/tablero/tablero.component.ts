@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PeonBlancoService } from '../services/peon-blanco.service';
-import { PeonNegroService } from '../services/peon-negro.service';
+import { PeonService } from '../services/peon.service';
 import { TorreService } from '../services/torre.service';
 import { CaballoService } from '../services/caballo.service';
 import { AlfilService } from '../services/alfil.service';
@@ -14,7 +13,7 @@ import { ReyService } from '../services/rey.service';
 })
 export class TableroComponent implements OnInit {
 
-  constructor(private peonBlanco:PeonBlancoService , private peonNegro:PeonNegroService, private torre:TorreService, private caballo:CaballoService, private alfil:AlfilService, private dama:DamaService, private rey:ReyService) { }
+  constructor(private peon:PeonService, private torre:TorreService, private caballo:CaballoService, private alfil:AlfilService, private dama:DamaService, private rey:ReyService) { }
 
   posInicial :string = '';
   posFinal :string = '';
@@ -31,20 +30,18 @@ export class TableroComponent implements OnInit {
       }
     } else {
       this.posFinal = posicion
-      if(this.ficha == '♙'){
-        this.peonBlanco.moverPeon(this.posInicial, this.posFinal, this.ficha);
-      }else if(this.ficha == '♟'){
-        this.peonNegro.moverPeon(this.posInicial, this.posFinal, this.ficha);
+      if(this.ficha == '♙' || this.ficha == '♟'){
+        this.peon.moverPeon(this.posInicial, this.posFinal);
       }else if(this.ficha == '♖' || this.ficha == '♜'){
-        this.torre.moverTorre(this.posInicial, this.posFinal, this.ficha);
+        this.torre.moverTorre(this.posInicial, this.posFinal);
       }else if(this.ficha == '♘' || this.ficha == '♞'){
-        this.caballo.moverCaballo(this.posInicial, this.posFinal, this.ficha);
+        this.caballo.moverCaballo(this.posInicial, this.posFinal);
       }else if(this.ficha == '♗' || this.ficha == '♝'){
-        this.alfil.moverAlfil(this.posInicial, this.posFinal, this.ficha);
+        this.alfil.moverAlfil(this.posInicial, this.posFinal);
       }else if(this.ficha == '♕' || this.ficha == '♛'){
-        this.dama.moverDama(this.posInicial, this.posFinal, this.ficha);
+        this.dama.moverDama(this.posInicial, this.posFinal);
       }else if(this.ficha == '♔' || this.ficha == '♚'){
-        this.rey.moverRey(this.posInicial, this.posFinal, this.ficha);
+        this.rey.moverRey(this.posInicial, this.posFinal);
       }
 
       this.posInicial = '';

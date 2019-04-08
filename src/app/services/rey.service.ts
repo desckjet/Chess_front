@@ -7,7 +7,9 @@ export class ReyService {
 
   constructor() { }
 
-  public moverRey(posInicial: string, posFinal: string, ficha: string){
+  public moverRey(posInicial: string, posFinal: string){
+
+    var ficha = document.getElementById(posInicial).innerText
     
     var casillaInicial = parseInt(posInicial.split(/([a-h])/)[2]);
     var casillaFinal = parseInt(posFinal.split(/([a-h])/)[2]);

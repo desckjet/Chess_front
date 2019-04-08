@@ -7,7 +7,9 @@ export class TorreService {
 
   constructor() { }
 
-  public moverTorre(posInicial: string, posFinal: string, ficha: string){
+  public moverTorre(posInicial: string, posFinal: string){
+
+    var ficha = document.getElementById(posInicial).innerText
 
     var bandera = false;
     var casillaInicial = parseInt(posInicial.split(/([a-h])/)[2]);
@@ -43,37 +45,6 @@ export class TorreService {
         casillaInicialFila = toLetters(cambiarLetraNegativa);
       }
     }
-
-    /*function fromLetters(str) {
-      var out = 0, 
-        len = str.length, 
-        pos = len;
-      while (--pos > -1) {
-          out += (str.charCodeAt(pos) - 64) * Math.pow(26, len - 1 - pos);
-      }
-      return out;
-    }
-
-    function toLetters(num){
-      switch(num){
-        case 33:
-          return 'a';
-        case 34:
-          return 'b';
-        case 35:
-          return 'c';
-        case 36:
-          return 'd';
-        case 37:
-          return 'e';
-        case 38:
-          return 'f';
-        case 39:
-          return 'g';
-        case 40:
-          return 'h';
-      }
-    }*/
 
     function fromLetters(str :string){
       switch(str){

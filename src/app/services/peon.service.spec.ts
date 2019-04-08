@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { PeonNegroService } from './peon-negro.service';
+import { PeonService } from './peon.service';
 
-describe('PeonNegroService', () => {
+describe('PeonService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: PeonNegroService = TestBed.get(PeonNegroService);
+    const service: PeonService = TestBed.get(PeonService);
     expect(service).toBeTruthy();
   });
 });

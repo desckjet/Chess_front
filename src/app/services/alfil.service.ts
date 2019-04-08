@@ -7,7 +7,9 @@ export class AlfilService {
 
   constructor() { }
 
-  public moverAlfil(posInicial: string, posFinal: string, ficha: string){
+  public moverAlfil(posInicial: string, posFinal: string){
+
+    var ficha = document.getElementById(posInicial).innerText
 
     var bandera = false;
     var casillaInicial = parseInt(posInicial.split(/([a-h])/)[2]);
