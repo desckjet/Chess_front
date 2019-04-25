@@ -10,11 +10,13 @@ import { CaballoService } from './services/caballo.service';
 import { AlfilService } from './services/alfil.service';
 import { DamaService } from './services/dama.service';
 import { ReyService } from './services/rey.service';
+import { OperacionesComponent } from './operaciones/operaciones.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TableroComponent,
+    OperacionesComponent,
   ],
   imports: [
     BrowserModule,
