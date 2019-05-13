@@ -15,5 +15,13 @@ pipeline {
 
       }
     }
+    stage('unit tests') {
+      steps {
+        nodejs('node') {
+          sh 'npm run ng test'
+        }
+
+      }
+    }
   }
 }
