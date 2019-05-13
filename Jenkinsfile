@@ -10,7 +10,7 @@ pipeline {
     stage('build') {
       steps {
         nodejs('node') {
-          sh 'npm ng build'
+          sh 'npm run ng build'
         }
 
       }
