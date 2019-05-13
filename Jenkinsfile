@@ -9,7 +9,7 @@ pipeline {
     }
     stage('build') {
       steps {
-        nodejs('node') {
+        nodejs(nodeJSInstallationName: 'node', configId: '1') {
           sh 'ng build'
         }
 
