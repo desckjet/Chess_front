@@ -9,10 +9,7 @@ pipeline {
     }
     stage('build') {
       steps {
-        nodejs('node') {
-          sh 'ng build'
-        }
-
+        sh 'ng build'
       }
     }
     stage('unit tests') {
