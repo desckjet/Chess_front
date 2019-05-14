@@ -10,7 +10,7 @@ pipeline {
     stage('build') {
       steps {
         nodejs('node') {
-          sh 'ng build'
+          bat 'ng build'
         }
 
       }
@@ -18,7 +18,7 @@ pipeline {
     stage('unit tests') {
       steps {
         nodejs('node') {
-          sh 'ng test --watch=false'
+          bat 'ng test --watch=false'
         }
 
       }
