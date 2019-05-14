@@ -18,7 +18,7 @@ pipeline {
     stage('unit tests') {
       steps {
         nodejs('node') {
-          sh 'npm test'
+          sh 'ng test --watch=false'
         }
 
       }
