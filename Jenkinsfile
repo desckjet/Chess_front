@@ -3,7 +3,6 @@ pipeline {
   stages {
     stage('init') {
       steps {
-        echo 'prueba'
         sh 'npm install'
       }
     }
@@ -18,7 +17,7 @@ pipeline {
     stage('unit tests') {
       steps {
         nodejs('node') {
-          sh 'npm ng test'
+          sh 'npm run ng test --single-run true'
         }
 
       }
