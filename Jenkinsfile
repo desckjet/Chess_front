@@ -1,14 +1,10 @@
 pipeline {
   agent any
   stages {
-    stage('init') {
+    stage('build') {
       steps {
         bat 'npm install -g @angular/cli'
         bat 'npm install'
-      }
-    }
-    stage('build') {
-      steps {
         nodejs('node') {
           bat 'ng build'
         }
