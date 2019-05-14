@@ -3,7 +3,6 @@ pipeline {
   stages {
     stage('init') {
       steps {
-        sh 'npm install'
         sh 'npm install -g @angular/cli'
       }
     }
