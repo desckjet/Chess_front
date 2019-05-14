@@ -3,12 +3,17 @@ pipeline {
   stages {
     stage('build') {
       steps {
+        bat 'npm install -g @angular/cli'
+        bat 'npm install'
         nodejs('node') {
-          bat 'npm install -g @angular/cli'
-          bat 'npm install'
           bat 'ng build'
         }
 
+      }
+    }
+    stage('unit test') {
+      steps {
+        bat 'ng test --watch=false'
       }
     }
   }
