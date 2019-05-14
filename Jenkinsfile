@@ -13,7 +13,10 @@ pipeline {
     }
     stage('unit test') {
       steps {
-        bat 'ng test --watch=false'
+        nodejs('node') {
+          bat 'ng test --watch=false'
+        }
+
       }
     }
   }
