@@ -4,14 +4,13 @@ pipeline {
     stage('init') {
       steps {
         sh 'npm install'
-        sh 'cd C:\\Program Files (x86)\\Jenkins\\workspace\\Chess_front_master'
         sh 'npm install -g @angular/cli'
       }
     }
     stage('build') {
       steps {
         nodejs('node') {
-          sh 'ng build'
+          sh 'npm build'
         }
 
       }
@@ -19,7 +18,7 @@ pipeline {
     stage('unit tests') {
       steps {
         nodejs('node') {
-          sh 'ng test'
+          sh 'npm test'
         }
 
       }
