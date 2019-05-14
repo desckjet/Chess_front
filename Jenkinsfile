@@ -17,7 +17,7 @@ pipeline {
     stage('unit tests') {
       steps {
         nodejs('node') {
-          sh 'ng test --single-run true'
+          sh 'ng test'
         }
 
       }
