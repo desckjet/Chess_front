@@ -20,6 +20,28 @@ export class ReyService {
       document.getElementById(posFinal).innerHTML = ficha;
       document.getElementById(posInicial).innerHTML = '';
     }
+    
+    if(posInicial == 'e1' && posFinal == 'g1'){
+      document.getElementById(posFinal).innerHTML = ficha;
+      document.getElementById(posInicial).innerHTML = '';
+      document.getElementById('f1').innerHTML = '♖';
+      document.getElementById('h1').innerHTML = '';
+    }else if(posInicial == 'e1' && posFinal == 'c1'){
+      document.getElementById(posFinal).innerHTML = ficha;
+      document.getElementById(posInicial).innerHTML = '';
+      document.getElementById('d1').innerHTML = '♖';
+      document.getElementById('a1').innerHTML = '';
+    }else if(posInicial == 'e8' && posFinal == 'g8'){
+      document.getElementById(posFinal).innerHTML = ficha;
+      document.getElementById(posInicial).innerHTML = '';
+      document.getElementById('f8').innerHTML = '♜';
+      document.getElementById('h8').innerHTML = '';
+    }else if(posInicial == 'e8' && posFinal == 'c8'){
+      document.getElementById(posFinal).innerHTML = ficha;
+      document.getElementById(posInicial).innerHTML = '';
+      document.getElementById('d8').innerHTML = '♜';
+      document.getElementById('a8').innerHTML = '';
+    }
 
     function fromLetters(str :string){
       switch(str){
