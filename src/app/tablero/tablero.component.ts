@@ -55,99 +55,51 @@ export class TableroComponent implements OnInit {
       if(this.ficha == '♙' && this.turno == 1 || this.ficha == '♟' && this.turno == 0){
         if(this.ficha == '♙' || this.ficha == '♟'){
           this.peon.moverPeon(this.posInicial, this.posFinal);
-          var vectorEstado = this.obtenerEstado();
-          var estadoString = vectorEstado.join();
-          var estado = {
-            "posicion": estadoString,
-          }
-          this.enviar(estado);
-          console.log(estado);
+          this.enviarEstado();
         }
-        if(this.ficha_negra == '♟'){
-          this.peon.moverPeon(this.ini, this.fin);
-        }
-        if(this.ficha == '♙'){this.turno = 0} else if(this.ficha == '♟'){this.turno = 1} 
-        if(this.ficha_negra == '♟'){this.turno = 1}
+        if(this.ficha == '♙'){this.turno = 0} else if(this.ficha == '♟'){this.turno = 1}
+        this.obtenerJugada();
+        this.movimientoAutomatico();
       }else if(this.ficha == '♖' && this.turno == 1 || this.ficha == '♜' && this.turno == 0){
         if(this.ficha == '♖' || this.ficha == '♜'){
           this.torre.moverTorre(this.posInicial, this.posFinal);
-          var vectorEstado = this.obtenerEstado();
-          var estadoString = vectorEstado.join();
-          var estado = {
-            "posicion": estadoString,
-          }
-          this.enviar(estado);
-          console.log(estado);
+          this.enviarEstado();
         }
-        if(this.ficha_negra == '♜'){
-          this.torre.moverTorre(this.ini, this.fin);
-        }
-        if(this.ficha == '♖'){this.turno = 0} else if(this.ficha == '♜'){this.turno = 1} 
-        if(this.ficha_negra == '♜'){this.turno = 1}
+        if(this.ficha == '♖'){this.turno = 0} else if(this.ficha == '♜'){this.turno = 1}
+        this.obtenerJugada();
+        this.movimientoAutomatico();
       }else if(this.ficha == '♘' && this.turno == 1 || this.ficha == '♞' && this.turno == 0){
         if(this.ficha == '♘' || this.ficha == '♞'){
           this.caballo.moverCaballo(this.posInicial, this.posFinal);
-          var vectorEstado = this.obtenerEstado();
-          var estadoString = vectorEstado.join();
-          var estado = {
-            "posicion": estadoString,
-          }
-          this.enviar(estado);
-          console.log(estado);
+          this.enviarEstado();
         }
-        if(this.ficha_negra == '♞'){
-          this.caballo.moverCaballo(this.ini, this.fin);
-        }
-        if(this.ficha == '♘'){this.turno = 0} else if(this.ficha == '♞'){this.turno = 1} 
-        if(this.ficha_negra == '♞'){this.turno = 1}
+        if(this.ficha == '♘'){this.turno = 0} else if(this.ficha == '♞'){this.turno = 1}
+        this.obtenerJugada();
+        this.movimientoAutomatico();
       }else if(this.ficha == '♗' && this.turno == 1|| this.ficha == '♝' && this.turno == 0){
         if(this.ficha == '♗' || this.ficha == '♝'){
           this.alfil.moverAlfil(this.posInicial, this.posFinal);
-          var vectorEstado = this.obtenerEstado();
-          var estadoString = vectorEstado.join();
-          var estado = {
-            "posicion": estadoString,
-          }
-          this.enviar(estado);
-          console.log(estado);
+          this.enviarEstado();
         }
-        if(this.ficha_negra == '♝'){
-          this.alfil.moverAlfil(this.ini, this.fin);
-        }
-        if(this.ficha == '♗'){this.turno = 0} else if(this.ficha == '♝'){this.turno = 1} 
-        if(this.ficha_negra == '♝'){this.turno = 1}
+        if(this.ficha == '♗'){this.turno = 0} else if(this.ficha == '♝'){this.turno = 1}
+        this.obtenerJugada();
+        this.movimientoAutomatico();
       }else if(this.ficha == '♕' && this.turno == 1 || this.ficha == '♛' && this.turno == 0){
         if(this.ficha == '♕' || this.ficha == '♛'){
           this.dama.moverDama(this.posInicial, this.posFinal);
-          var vectorEstado = this.obtenerEstado();
-          var estadoString = vectorEstado.join();
-          var estado = {
-            "posicion": estadoString,
-          }
-          this.enviar(estado);
-          console.log(estado);
+          this.enviarEstado();
         }
-        if(this.ficha_negra == '♛'){
-          this.dama.moverDama(this.ini, this.fin);
-        }
-        if(this.ficha == '♕'){this.turno = 0} else if(this.ficha == '♛'){this.turno = 1} 
-        if(this.ficha_negra == '♛'){this.turno = 1}
+        if(this.ficha == '♕'){this.turno = 0} else if(this.ficha == '♛'){this.turno = 1}
+        this.obtenerJugada();
+        this.movimientoAutomatico();
       }else if(this.ficha == '♔' && this.turno == 1 || this.ficha == '♚' && this.turno == 0){
         if(this.ficha == '♔' || this.ficha == '♚'){
           this.rey.moverRey(this.posInicial, this.posFinal);
-          var vectorEstado = this.obtenerEstado();
-          var estadoString = vectorEstado.join();
-          var estado = {
-            "posicion": estadoString,
-          }
-          this.enviar(estado);
-          console.log(estado);
+          this.enviarEstado();
         }
-        if(this.ficha_negra == '♚'){
-          this.rey.moverRey(this.ini, this.fin);
-        }
-        if(this.ficha == '♔'){this.turno = 0} else if(this.ficha == '♚'){this.turno = 1} 
-        if(this.ficha_negra == '♚'){this.turno = 1}
+        if(this.ficha == '♔'){this.turno = 0} else if(this.ficha == '♚'){this.turno = 1}
+        this.obtenerJugada(); 
+        this.movimientoAutomatico();
       }
       
       this.posInicial = '';
@@ -201,8 +153,56 @@ export class TableroComponent implements OnInit {
     return vector;
   }
 
+  public movimientoAutomatico(){
+    if(this.ficha_negra == '♟'){
+      this.peon.moverPeon(this.ini, this.fin);
+      this.turno = 1
+    }else if(this.ficha_negra == '♜'){
+      this.torre.moverTorre(this.ini, this.fin);
+      this.turno = 1
+    }else if(this.ficha_negra == '♞'){
+      this.caballo.moverCaballo(this.ini, this.fin);
+      this.turno = 1
+    }else if(this.ficha_negra == '♝'){
+      this.alfil.moverAlfil(this.ini, this.fin);
+      this.turno = 1
+    }else if(this.ficha_negra == '♛'){
+      this.dama.moverDama(this.ini, this.fin);
+      this.turno = 1
+    }else if(this.ficha_negra == '♚'){
+      this.rey.moverRey(this.ini, this.fin);
+      this.turno = 1
+    }
+  }
+
+  public obtenerJugada(){
+    this.dataService.getData().subscribe(data => {
+      console.log(data);
+      var types = JSON.stringify(data);
+      var sp = types.split(':"');
+      sp = sp[1].split('"}');
+      sp = sp[0].split(/([a-h][1-8])/);
+      this.ini = sp[1];
+      this.fin = sp[3];
+      this.ficha_negra = document.getElementById(this.ini).innerText;
+      console.log(this.ini);
+      console.log(this.fin);
+      console.log(this.ficha_negra);
+    });
+  }
+
+  public enviarEstado(){
+    var vectorEstado = this.obtenerEstado();
+    var estadoString = vectorEstado.join();
+    var estado = {
+      "posicion": estadoString,
+    }
+    this.enviar(estado);
+    console.log(estado);
+  }
+
   enviar(dato){
-    console.log('works');
+    //console.log('works');
     this.dataService.sendData(dato).subscribe();
   }
 
